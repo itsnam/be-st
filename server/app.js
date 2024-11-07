@@ -7,10 +7,11 @@ const orderRoutes = require('./routes/orders.js');
 const authRoutes = require('./routes/auth.js');
 const addressRoutes = require('./routes/addresses.js');
 const cors = require('cors');
+require('dotenv').config();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
-mongoose.connect('mongodb://localhost:27017/slothstore', {
+mongoose.connect(process.env.URL_CONNECT, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
